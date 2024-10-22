@@ -1,0 +1,22 @@
+import random
+
+name_list = []
+replay = 'yes'
+
+def get_names():
+    qtde = int(input('How many names do you want to register? '))
+
+    for i in range(qtde):
+        names = input(f"What's {i+1}º name: ")
+        name_list.append(names)
+
+
+def random_choice():
+    name_choice = random.choice(name_list)
+    return name_choice
+
+while replay == 'yes':
+    get_names()
+    name_choiced = random_choice()
+    print('The name randomly choiced is: {}'.format(str(name_choiced).capitalize()))
+    replay = input('Do you wanna play again? ')
